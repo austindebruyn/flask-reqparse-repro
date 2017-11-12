@@ -29,7 +29,7 @@ class TodoSimple(Resource):
     # @api.expect(parser)
     @api.expect(task_fields)
     def put(self, todo_id):
-        # todos[todo_id] = parser.parse_args()
+        # todos[todo_id] = parser.parse_args(strict=True)
         # todos[todo_id] = request.form
         todos[todo_id] = request.json
         return {todo_id: todos[todo_id]}
