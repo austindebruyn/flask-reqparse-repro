@@ -1,6 +1,0 @@
-setup.py
-flask_reqparse_repro.egg-info/PKG-INFO
-flask_reqparse_repro.egg-info/SOURCES.txt
-flask_reqparse_repro.egg-info/dependency_links.txt
-flask_reqparse_repro.egg-info/requires.txt
-flask_reqparse_repro.egg-info/top_level.txt
