@@ -1,0 +1,85 @@
+{
+    "info": {
+        "version": "1.0",
+        "title": "API"
+    },
+    "paths": {
+        "/{todo_id}": {
+            "get": {
+                "operationId": "get_todo_simple",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "tags": [
+                    "default"
+                ]
+            },
+            "put": {
+                "operationId": "put_todo_simple",
+                "tags": [
+                    "default"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "payload",
+                        "required": true,
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/task_fields"
+                        }
+                    }
+                ]
+            },
+            "parameters": [
+                {
+                    "name": "todo_id",
+                    "required": true,
+                    "in": "path",
+                    "type": "string"
+                }
+            ]
+        }
+    },
+    "basePath": "/",
+    "responses": {
+        "ParseError": {
+            "description": "When a mask can't be parsed"
+        },
+        "MaskError": {
+            "description": "When any error occurs on mask"
+        }
+    },
+    "produces": [
+        "application/json"
+    ],
+    "swagger": "2.0",
+    "definitions": {
+        "task_fields": {
+            "type": "object",
+            "properties": {
+                "task": {
+                    "type": "string"
+                },
+                "priority": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "consumes": [
+        "application/json"
+    ],
+    "tags": [
+        {
+            "name": "default",
+            "description": "Default namespace"
+        }
+    ]
+}

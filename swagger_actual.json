@@ -1,0 +1,76 @@
+{
+    "consumes": [
+        "application/json"
+    ],
+    "swagger": "2.0",
+    "tags": [
+        {
+            "name": "default",
+            "description": "Default namespace"
+        }
+    ],
+    "paths": {
+        "/{todo_id}": {
+            "get": {
+                "tags": [
+                    "default"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "operationId": "get_todo_simple"
+            },
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "todo_id",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "put": {
+                "tags": [
+                    "default"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "priority",
+                        "description": "Priority of task",
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "task",
+                        "description": "Task to be completed",
+                        "type": "string"
+                    }
+                ],
+                "operationId": "put_todo_simple"
+            }
+        }
+    },
+    "produces": [
+        "application/json"
+    ],
+    "info": {
+        "version": "1.0",
+        "title": "API"
+    },
+    "responses": {
+        "ParseError": {
+            "description": "When a mask can't be parsed"
+        },
+        "MaskError": {
+            "description": "When any error occurs on mask"
+        }
+    },
+    "basePath": "/"
+}
