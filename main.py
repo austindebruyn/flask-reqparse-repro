@@ -26,12 +26,14 @@ class TodoSimple(Resource):
     def get(self, todo_id):
         return {todo_id: todos[todo_id]}
 
-    # @api.expect(parser)
-    @api.expect(task_fields)
+    # @api.expect(parser)     # Use this line instead of L30 to see actual output
+    @api.expect(task_fields)  # This produces expected output
     def put(self, todo_id):
         # todos[todo_id] = parser.parse_args(strict=True)
         # todos[todo_id] = request.form
+
         todos[todo_id] = request.json
+
         return {todo_id: todos[todo_id]}
 
 if __name__ == '__main__':
